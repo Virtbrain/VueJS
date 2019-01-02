@@ -11,8 +11,8 @@
     <div class="container">
         <h1>Давайте послушаем несколько историй!</h1>
         <ul class="list-group">
-            <li v-for="(story, index) in stories" :key="index" class="list-group-item">
-                {{index+1}}. {{story.writer}} сказал "{{story.plot}}"
+            <li v-for="(value, key, index) in me" :key="index" class="list-group-item">
+                {{index+1}} : {{key}} : {{value}}
             </li>
         </ul>
         <pre>{{$data}}</pre>
