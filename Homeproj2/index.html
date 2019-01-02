@@ -13,6 +13,9 @@
             <p>Немедленно отправьте посыльного!</p>
             <p>В соседнее королевство Сердец!</p>
         </template>
+        <template v-else>
+            <h1>Вы отправили сообщение</h1>
+        </template>
         <textarea v-model="message"></textarea>
         <br />
         <button type="submit" v-show="message">
