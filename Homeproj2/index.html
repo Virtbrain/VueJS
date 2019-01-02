@@ -8,19 +8,14 @@
 </head>
 <body>
     <div id="app">
-        <template v-if="!message">
-            <h1>Вы должны написать сообщение для получения помощи!</h1>
-            <p>Немедленно отправьте посыльного!</p>
-            <p>В соседнее королевство Сердец!</p>
-        </template>
-        <template v-else>
-            <h1>Вы отправили сообщение</h1>
-        </template>
-        <textarea v-model="message"></textarea>
-        <br />
-        <button type="submit" v-show="message">
-            Отпарвить послание всем союзникам для помощи!
-        </button>
+        <h1 v-if="gender === 'female' || gender === 'male'">
+            <span v-show="gender === 'female'">Привет, Мисс {{name}}</span>
+            <span v-show="gender === 'male'">Привет, Мистер {{name}}</span>
+        <h1 v-else>Так значит вы не можете решить. Отлично!</h1>
+        <label for="gender">Введите свой пол:</label>
+        <input v-model="gender" type="text" id="gender">
+        <label for="name">Введите ваше имя:</label>
+        <input v-model="name" type="text" id="name">
         <pre>{{ $data }}</pre>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
