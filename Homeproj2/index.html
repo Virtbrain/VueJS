@@ -8,10 +8,14 @@
 </head>
 <body>
     <div id="app">
-        <h1 v-if="!message">Вы должны написать сообщение для получения помощи!</h1>
+        <template v-if="!message">
+            <h1>Вы должны написать сообщение для получения помощи!</h1>
+            <p>Немедленно отправьте посыльного!</p>
+            <p>В соседнее королевство Сердец!</p>
+        </template>
         <textarea v-model="message"></textarea>
         <br />
-        <button type="submit" v-if="message">
+        <button type="submit" v-show="message">
             Отпарвить послание всем союзникам для помощи!
         </button>
         <pre>{{ $data }}</pre>
