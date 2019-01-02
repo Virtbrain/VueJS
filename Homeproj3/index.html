@@ -9,12 +9,13 @@
 </head>
 <body>
     <div class="container">
-        <h1>Таблица умножения на 4</h1>
+        <h1>Давайте послушаем несколько историй!</h1>
         <ul class="list-group">
-            <li v-for="i in 11" class="list-group-item">
-                {{ i }} умножить на 4 равно {{ i*4 }}.
+            <li v-for="(story, index) in stories" :key="index" class="list-group-item">
+                Кто-то сказал "{{story}}"
             </li>
         </ul>
+        <pre>{{$data}}</pre>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="Vue.js"></script>
