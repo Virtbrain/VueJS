@@ -12,7 +12,7 @@
         <h1>Давайте послушаем несколько историй!</h1>
         <ul class="list-group">
             <li v-for="(story, index) in stories" :key="index" class="list-group-item">
-                Кто-то сказал "{{story}}"
+                {{index+1}}. {{story.writer}} сказал "{{story.plot}}"
             </li>
         </ul>
         <pre>{{$data}}</pre>
